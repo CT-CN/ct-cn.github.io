@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title></title>
+    <url>/2021/12/17/index-1/</url>
+    <content><![CDATA[<h1 id="Google-云设置SSH密码链接"><a href="#Google-云设置SSH密码链接" class="headerlink" title="Google 云设置SSH密码链接"></a>Google 云设置SSH密码链接</h1><ul>
+<li><p>修改配置文件</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
+<li><p>修改以下2行为yes</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure></li>
+<li><p>修改完成后重启ssh</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title></title>
+    <url>/2021/12/17/test/</url>
+    <content><![CDATA[<h1 id="之前的博客出了点问题"><a href="#之前的博客出了点问题" class="headerlink" title="之前的博客出了点问题"></a>之前的博客出了点问题</h1><p>之前博客出了点问题，没有备份，在此重新开一个博客，方便记录一些知识点</p>
+]]></content>
+  </entry>
+</search>
