@@ -21,7 +21,7 @@ article + article,
   --color-text: #444;
   --color-block: #f6f6f6;
   --color-inlinecode: #228b22;
-  --color-codeblock: #f5fffa;
+  --color-codeblock: #fff7ea;
   --color-h1: #3a3a3a;
   --color-h2: #3a3a3a;
   --color-h3: #333;
@@ -87,7 +87,7 @@ body.modal-active {
   }
 }
 a {
-  color: #1b79c4;
+  color: #2196f3;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.28s ease;

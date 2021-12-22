@@ -20,19 +20,19 @@
   <meta content="ChuTian" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1640166289574" as="style">
+  <link rel="preload" href="/css/style.css?time=1640176318192" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>Linux 使输入的命令不被记录 - ChuTian</title>
   <meta name="keywords" content="null">
-  <meta name="description" content="使输入的命令不被记录：unset HISTFILE 1unset HISTFILE  or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE&#x3D;&#x2F;dev&#x2F;null; export HISTSIZE&#x3D;0; export HISTFILESIZE&#x3D;0  这样的话，在Linux上输入的命令将不会记录在 .ba">
+  <meta name="description" content="使输入的命令不被记录：unset HISTFILE unset HISTFILE   orunset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE&#x3D;&#x2F;dev&#x2F;null; export HISTSIZE&#x3D;0; export HISTFILESIZE&#x3D;0  这样的话，在Linux上输入的命令将不会记录在 .bas">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 使输入的命令不被记录">
 <meta property="og:url" content="http://example.com/2021/12/22/index_3/index.html">
 <meta property="og:site_name" content="ChuTian">
-<meta property="og:description" content="使输入的命令不被记录：unset HISTFILE 1unset HISTFILE  or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE&#x3D;&#x2F;dev&#x2F;null; export HISTSIZE&#x3D;0; export HISTFILESIZE&#x3D;0  这样的话，在Linux上输入的命令将不会记录在 .ba">
+<meta property="og:description" content="使输入的命令不被记录：unset HISTFILE unset HISTFILE   orunset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE&#x3D;&#x2F;dev&#x2F;null; export HISTSIZE&#x3D;0; export HISTFILESIZE&#x3D;0  这样的话，在Linux上输入的命令将不会记录在 .bas">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-12-22T10:25:00.000Z">
@@ -69,7 +69,7 @@ article + article,
   --color-text: #444;
   --color-block: #f6f6f6;
   --color-inlinecode: #228b22;
-  --color-codeblock: #f5fffa;
+  --color-codeblock: #fff7ea;
   --color-h1: #3a3a3a;
   --color-h2: #3a3a3a;
   --color-h3: #333;
@@ -135,7 +135,7 @@ body.modal-active {
   }
 }
 a {
-  color: #1b79c4;
+  color: #2196f3;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.28s ease;
@@ -1626,8 +1626,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1640166289574" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1640166289574"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1640176318192" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1640176318192"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2276,9 +2276,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
     <p>使输入的命令不被记录：<code>unset HISTFILE</code></p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unset HISTFILE </span><br></pre></td></tr></table></figure>
-<h4 id="or"><a href="#or" class="headerlink" title="or"></a>or</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0</span><br></pre></td></tr></table></figure>
-
+<pre><code>unset HISTFILE 
+</code></pre>
+<h4 id="or"><a href="#or" class="headerlink" title="or"></a>or</h4><pre><code>unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0
+</code></pre>
 <h5 id="这样的话，在Linux上输入的命令将不会记录在-bash-history"><a href="#这样的话，在Linux上输入的命令将不会记录在-bash-history" class="headerlink" title="这样的话，在Linux上输入的命令将不会记录在 .bash_history"></a>这样的话，在Linux上输入的命令将不会记录在 <code>.bash_history</code></h5>
 
   </div>
@@ -2334,7 +2335,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021/12/23/index_4/'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>几种反弹shell的方式</p>
-          <p class='content'>Python版1python -c &#x27;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_ST...</p>
+          <p class='content'>Python版python -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STRE...</p>
         </a>
       
       
@@ -2479,39 +2480,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
     
       
-        <br>
-        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          
-            
-          
-            
-          
-            
-          
-        </div>
-      
-    
-      
-        <div><p>footer.license</p>
-</div>
-      
-    
-      
-        
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
-</div>
-        
-      
-    
-      
-        footer.use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev" target="_blank" class="codename">Volantis</a>
-        footer.theme
-      
-    
-      
         <div class='copyright'>
-        <p><a href="/">Copyright © 2017-2020 ChuTian</a></p>
+        <p><a href="/">Copyright © 2017-2021 ChuTian</a></p>
 
         </div>
       
@@ -2556,8 +2526,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640166289574')
-      volantis.js('/js/thirdparty/message.js?time=1640166289574', () => {
+      volantis.css('/css/message.css?time=1640176318192')
+      volantis.js('/js/thirdparty/message.js?time=1640176318192', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2602,8 +2572,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640166289574')
-      volantis.js('/js/thirdparty/message.js?time=1640166289574', () => {
+      volantis.css('/css/message.css?time=1640176318192')
+      volantis.js('/js/thirdparty/message.js?time=1640176318192', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2662,8 +2632,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640166289574')
-      volantis.js('/js/thirdparty/message.js?time=1640166289574', () => {
+      volantis.css('/css/message.css?time=1640176318192')
+      volantis.js('/js/thirdparty/message.js?time=1640176318192', () => {
         hideMessage(done);
       });
     } else {
@@ -2826,7 +2796,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/plugins/rightMenu.js?time=1640166289574')
+    volantis.js('/js/plugins/rightMenu.js?time=1640176318192')
   </script>
 
 
@@ -2840,19 +2810,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1640166289574")
+        volantis.js("/js/plugins/sites.js?time=1640176318192")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1640166289574")
+        volantis.js("/js/plugins/friends.js?time=1640176318192")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1640166289574")
+        volantis.js("/js/plugins/contributors.js?time=1640176318192")
       }
     
   };
@@ -2965,7 +2935,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1640166289574').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1640176318192').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -2974,7 +2944,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1640166289574.js"></script>
+<script src="/js/app.js?time=1640176318192.js"></script>
 
 
 <!-- optional -->
@@ -2987,7 +2957,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1640166289574");
+    return volantis.js("/js/search/hexo.js?time=1640176318192");
   }
 
   function loadSearchService() {
@@ -3028,6 +2998,17 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <script>
 
+  volantis.css("https://cdn.jsdelivr.net/npm/highlight.js@11.3.1/styles/base16/darktooth.css");
+
+
+  volantis.js("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10/build/highlight.min.js").then(()=>{
+    volantis.requestAnimationFrame(hljs.highlightAll)
+  })
+  volantis.pjax.push(()=>{
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  },"highlightjs")
 
 
   function pjax_highlightjs_copyCode(){
@@ -3093,7 +3074,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1640166289574').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1640176318192').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{

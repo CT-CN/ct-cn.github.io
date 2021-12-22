@@ -591,7 +591,7 @@ article#tag .all-tags ul li span:before {
   background: var(--color-codeblock);
   font-size: 0.8125rem;
   font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
-  border: 1px solid #d6ffeb;
+  border: 1px solid #ffebcb;
   padding: 16px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -683,7 +683,7 @@ article#tag .all-tags ul li span:before {
 }
 .article .widget.list .content a,
 .article .widget.related_posts .content a {
-  color: #1b79c4;
+  color: #2196f3;
 }
 .article .widget.list .content a:hover,
 .article .widget.related_posts .content a:hover {
@@ -710,7 +710,7 @@ article#tag .all-tags ul li span:before {
   border-left: none;
   padding: 0;
   padding-left: 4px;
-  color: #1b79c4;
+  color: #2196f3;
   font-weight: normal;
   text-decoration: none;
 }
@@ -727,7 +727,7 @@ article#tag .all-tags ul li span:before {
   display: -webkit-box /* OLD - iOS 6-, Safari 3.1-6 */;
   display: -moz-box /* OLD - Firefox 19- (buggy but mostly works) */;
   display: inline;
-  color: #1b79c4;
+  color: #2196f3;
 }
 .article .widget .content .list a:hover .name {
   color: #ff5722;
@@ -2939,7 +2939,7 @@ img.lazyload:not(.placeholder).loaded {
   word-break: break-all;
 }
 .widget.text .content a {
-  color: #1b79c4;
+  color: #2196f3;
   transition: all 0.28s ease;
   -webkit-transition: all 0.28s ease;
   -khtml-transition: all 0.28s ease;
@@ -4133,7 +4133,7 @@ div.dropmenu {
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   -ms-transition: all 0.28s ease;
-  color: #1b79c4;
+  color: #2196f3;
 }
 div.dropmenu:hover {
   color: inherit;
@@ -6499,10 +6499,10 @@ pre {
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   -ms-transition: all 0.28s ease;
-  background: #dcffed;
+  background: #ffeed2;
 }
 .highlight:hover .gutter {
-  background: #dcffed;
+  background: #ffedd0;
 }
 .highlight figcaption {
   font-size: 13px;
@@ -6865,7 +6865,7 @@ article#comments #valine_container .vcards .vcontent pre code {
   border: none;
 }
 article#comments #valine_container .vcards .vcontent a {
-  color: #1b79c4;
+  color: #2196f3;
   line-height: inherit;
   transition: all 0.28s ease;
   -webkit-transition: all 0.28s ease;
