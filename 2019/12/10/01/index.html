@@ -4,8 +4,8 @@
   <meta name="generator" content="Hexo 5.4.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="index,follow">
-  <link rel="canonical" href="http://example.com/"/>
+  
+  <link rel="canonical" href="http://example.com/2019/12/10/01/"/>
   <!-- 渲染优化 -->
   <meta http-equiv='x-dns-prefetch-control' content='on' />
   <link rel='dns-prefetch' href='https://cdn.jsdelivr.net'>
@@ -20,19 +20,23 @@
   <meta content="ChuTian" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1640161081824" as="style">
+  <link rel="preload" href="/css/style.css?time=1640161081813" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
   <!-- 页面元数据 -->
-  <title>ChuTian</title>
-  <meta name="keywords" content="">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="ChuTian">
-<meta property="og:url" content="http://example.com/index.html">
+  <title>看我如何拿下BC站的服务器 - ChuTian</title>
+  <meta name="keywords" content="null">
+  <meta name="description" content="一、信息收集拿到目标网站，可见是一个很常规的bc站。 先进行简单的信息收集，通过Wappalyzer插件可见php版本与windows serve这两个比较重要的信息  命令行nslookup+url查看ip,发现没有CDN    再到爱站上看看  嗯，柬埔寨可还行 知道ip地址后端口扫描一波（全端口扫描+服务探测。这个过程比较漫长，可以先干别的）     在扫描之余尝试3389连接远程桌面（因为">
+<meta property="og:type" content="article">
+<meta property="og:title" content="看我如何拿下BC站的服务器">
+<meta property="og:url" content="http://example.com/2019/12/10/01/index.html">
 <meta property="og:site_name" content="ChuTian">
+<meta property="og:description" content="一、信息收集拿到目标网站，可见是一个很常规的bc站。 先进行简单的信息收集，通过Wappalyzer插件可见php版本与windows serve这两个比较重要的信息  命令行nslookup+url查看ip,发现没有CDN    再到爱站上看看  嗯，柬埔寨可还行 知道ip地址后端口扫描一波（全端口扫描+服务探测。这个过程比较漫长，可以先干别的）     在扫描之余尝试3389连接远程桌面（因为">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2019-12-10T11:43:56.000Z">
+<meta property="article:modified_time" content="2019-12-10T10:38:16.000Z">
 <meta property="article:author" content="楚天">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
@@ -1622,8 +1626,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1640161081824" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1640161081824"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1640161081813" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1640161081813"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -2044,7 +2048,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <!-- Custom Files head end-->
 </head>
   <body itemscope itemtype="http://schema.org/WebPage">
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2177,7 +2181,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="full" class='cover-wrapper  dock' style="display: ;">
+      <div id="none" class='cover-wrapper post dock' style="display: none;">
         
   <div id="parallax-window"></div>
 
@@ -2198,7 +2202,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   </div>
 </div>
 
-        <div id="scroll-down" style="display: ;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
+        <div id="scroll-down" style="display: none;"><i class="fa fa-chevron-down scroll-down-effects"></i></div>
       </div>
     
   
@@ -2208,349 +2212,238 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-  
-  <section class="post-list">
-    
-      
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-        
-          
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/16/index-1/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="ChuTian">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/12/16/index-1/"  itemprop="url">
-        Google 云设置SSH密码链接
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        
-修改配置文件
-12vi /etc/ssh/sshd_config
-修改以下2行为yes
-123PermitRootLogin yesPasswordAuthentication yes
-修改完成后重启ssh
-1sudo /etc/init.d/ssh restart
-
-
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-12-16T09:25:00+00:00">2021-12-16</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/12/16/index-1/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2021/12/15/test/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="ChuTian">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2021/12/15/test/"  itemprop="url">
-        之前的博客出了点问题
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        之前博客出了点问题，没有备份，在此重新开一个博客，方便记录一些知识点
-
-
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2021-12-15T09:25:00+00:00">2021-12-15</time>
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2021/12/15/test/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/26/03/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="ChuTian">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2019/12/26/03/"  itemprop="url">
-        关于Windows的一些特性
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        部分图片看不清可右键新建标签页查看一、先介绍两条命令吧1.query user命令查询用户命令：query user在输入这一条命令后，会显示计算机机名或域，后面跟用户名。
-
-2.第二条 tscon切换会话命令Windows系统下，tscon可被用来切换远程桌面的会话。正常情况下，切换会话时需要提供登录密码，但通过特殊的利用方法能够绕过验证，不输入密码实现未授权登录。该命令具体用法如下
-二、...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2019-12-26T16:07:15+00:00">2019-12-26</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url"><span itemprop="name">渗透</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2019/12/26/03/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/16/02/">
-  <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-    <meta itemprop="name" content="ChuTian">
-  </span>
-  
-  
-  
-    <span hidden>
-      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
-    </span>
-  
-  
-    
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2019/12/16/02/"  itemprop="url">
-        使用L2TP拨号上网
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
-    
-      
-        什么是L2TP​    L2TP是一种工业标准的Internet隧道协议，功能大致和PPTP协议类似，比如同样可以对网络数据流进行加密。不过也有不同之处，比如PPTP要求网络为IP网络，L2TP要求面向数据包的点对点连接；PPTP使用单一隧道，L2TP使用多隧道；L2TP提供包头压缩、隧道验证，而PPTP不支持。
-如何搭建IPsec VPN1.首先需要购买一个VPS服务器（必须要是linux...
-      
-    
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2019-12-16T10:27:04+00:00">2019-12-16</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E8%84%9A%E6%9C%AC/">脚本</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E8%84%9A%E6%9C%AC/" itemprop="url"><span itemprop="name">脚本</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2019/12/16/02/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
-</div>
-
-          </div>
-        
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow"  itemscope itemtype="http://schema.org/Article" >
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow article-type-post" id="post" itemscope itemprop="blogPost">
   <link itemprop="mainEntityOfPage" href="http://example.com/2019/12/10/01/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="ChuTian">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2019/12/10/01/"  itemprop="url">
+    
+    
+      <h1 class="title" itemprop="name headline">
         看我如何拿下BC站的服务器
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
+      </h1>
+      <div class='new-meta-box'>
+        
+          
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png" class="lazyload" data-srcset="https://cdn.jsdelivr.net/gh/volantis-x/cdn-org/blog/favicon/apple-touch-icon.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >
+    <p itemprop="name">楚天</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
     
-      
-        一、信息收集拿到目标网站，可见是一个很常规的bc站。
-先进行简单的信息收集，通过Wappalyzer插件可见php版本与windows serve这两个比较重要的信息
-
-命令行nslookup+url查看ip,发现没有CDN
-  
-再到爱站上看看
-
-嗯，柬埔寨可还行
-知道ip地址后端口扫描一波（全端口扫描+服务探测。这个过程比较漫长，可以先干别的）
-   
-在扫描之余尝试3389连接远程桌面...
-      
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url"><span itemprop="name">渗透</span></a>
+      </span>
     
   </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
-        
-        <time itemprop="dateCreated datePublished" datetime="2019-12-10T11:43:56+00:00">2019-12-10</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/%E6%B8%97%E9%80%8F/">渗透</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/%E6%B8%97%E9%80%8F/" itemprop="url"><span itemprop="name">渗透</span></a>
-            </span>
+
+
           
         
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2019-12-10T11:43:56+00:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2019年12月10日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
       </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h2 id="一、信息收集"><a href="#一、信息收集" class="headerlink" title="一、信息收集"></a>一、信息收集</h2><div class="story post-story"><p>拿到目标网站，可见是一个很常规的bc站。</p>
+<p>先进行简单的信息收集，通过Wappalyzer插件可见php版本与windows serve这两个比较重要的信息</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210120110.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210120110.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>命令行<code>nslookup</code>+<code>url</code>查看ip,发现没有CDN</p>
+<p> <img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210121157.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210121157.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" > </p>
+<p>再到爱站上看看</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210121353.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210121353.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>嗯，柬埔寨可还行</p>
+<p>知道ip地址后端口扫描一波（全端口扫描+服务探测。这个过程比较漫长，可以先干别的）</p>
+<p><img src="https://s2.ax1x.com/2019/12/10/QDig76.md.png" class="lazyload" data-srcset="https://s2.ax1x.com/2019/12/10/QDig76.md.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >   </p>
+<p>在扫描之余尝试3389连接远程桌面（因为开始已经看到是windows serve的服务器）</p>
+<p>   <img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210122700.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210122700.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>试了两次，猜测是修改端口了，或者是登录ip白名单？</p>
+</div><h2 id="二、后台爆破"><a href="#二、后台爆破" class="headerlink" title="二、后台爆破"></a>二、后台爆破</h2><div class="story post-story"><p>回到web，反手在url后面加一个admin</p>
+<p>   <img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210123122.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210123122.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>后台出来了，这bc有点水啊，随手测了几个弱口令，无果</p>
+<p>发现没有验证码校验，抓包爆破一波  </p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210131048.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210131048.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>通常找一些常规的弱口令进行爆破就够了</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210131203.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210131203.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>秒出密码：123456，我吐了，他们运维可能要被打死</p>
+<p> <img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210131428.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210131428.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210131631.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210131631.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+</div><h2 id="三、寻找上传点"><a href="#三、寻找上传点" class="headerlink" title="三、寻找上传点"></a>三、寻找上传点</h2><div class="story post-story"><p>这么简单就拿下了后台，我们当然不会满足。</p>
+<p>大致浏览了一下后台的各个功能，寻找可以利用的地方，在系统管理处找到一处上传点</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210132139.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210132139.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p> （有没有表哥发收款码过来，暴富的机会来了！）</p>
+<p>随便写一个一句话，并将后缀改成<code>.jpg</code>并且抓包发送到<code>Repeater</code>查看</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210132602.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210132602.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>提示“<strong>不是真正的图片类型</strong>” ，在包内改成php后缀，提示非法文件类型</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210133132.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210133132.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>感觉是白名单+文件头校验，尝试图片马</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210133436.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210133436.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>尝试了几波，白名单限制得很死，没绕过去</p>
+<p>顿时陷入了僵局，还是另外寻找突破口吧</p>
+</div><h2 id="四、峰回路转"><a href="#四、峰回路转" class="headerlink" title="四、峰回路转"></a>四、峰回路转</h2><div class="story post-story"><p>认真想了一下，它是Windows，而Windows的主流建站工具，<code>宝塔</code>，<code>护卫神</code>，<code>phpstudy</code>，<code>upupw</code>。之前看到它的php版本是<code>5.2.17</code>，正好想到前段时间爆出的phpstudy的2个后门，后门存在于<code>php-5.4.45</code>和<code>php-5.2.17</code>两个版本中。马上测试一波</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210134018.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210134018.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210134058.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210134058.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>请求包中<code>Accept-Encoding: gzip, deflate</code>,将<code>gzip,deflate</code>中间的空格删掉</p>
+<p>并在下面加上一句：<code>Accept-Charset:</code>+<code>所执行命令的base64编码</code></p>
+<p>我惊呆了，真的是用phpstudy建站的，这站长心也太大了吧,接下来的事情就好办多了。</p>
+</div><h2 id="五、蚁剑无文件shell连接之"><a href="#五、蚁剑无文件shell连接之" class="headerlink" title="五、蚁剑无文件shell连接之"></a>五、蚁剑无文件shell连接之</h2><div class="story post-story"><p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135028.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135028.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >   </p>
+<p>编码器记得改成<code>base64</code></p>
+<p>然后将一句话进行<code>base64</code>编码，复制到 <code>  Accept-Charset:</code>后面</p>
+<p> <img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135143.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135143.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>修改蚁剑内的请求信息，处<code>Header</code>头修改如图下</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135533.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135533.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>测试连接，成功连接上</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135625.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135625.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135645.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135645.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>发现直接是SYSTEM权限，这就好玩了</p>
+</div><h2 id="六、上传mimikatz抓取Hash"><a href="#六、上传mimikatz抓取Hash" class="headerlink" title="六、上传mimikatz抓取Hash"></a>六、上传mimikatz抓取Hash</h2><div class="story post-story"><p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135810.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135810.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>新建目录，上传<code>winrar.exe</code> +<code>mimikatz </code></p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135952.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210135952.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>使用上传的winrar解压，命令：<code>winrar.exe e x64.rar</code></p>
+<p>   <img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210140236.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210140236.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>运行<code>mimi.bat</code>,这里说一下下图后面最好加上一个<code>exit</code>，不然的话mimikatz会不断的写日志，导致log文件越来越大,当时就犯了这样一个错误</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210140344.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210140344.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210140724.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210140724.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>将生成的<code>mimikatz.log</code>复制到网站根目录下,然后去查看</p>
+<p> <img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210140909.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210140909.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>成功抓到管理员的RDP的密码。</p>
+<p>回头看看之前扫的全端口也扫好了</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210141041.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210141041.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" >                                       </p>
+<p>可见总共开了三个端口，一般更改了3389端口  用nmap扫描加 <code>-sV  </code>参数后，扫出的rdp服务,一般service会显示为 <code>ssl/unknown</code>.</p>
+<p>尝试远程桌面连接</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210141153.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210141153.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>嘻嘻，成功登录，拿下服务器，随即点了根烟，将所有证据打包好，掏出了手机拨打110</p>
+</div><h2 id="七、总结"><a href="#七、总结" class="headerlink" title="七、总结"></a>七、总结</h2><div class="story post-story"><p>在我们拿下webshell的时候，想要获取数据或者源码往往会用菜刀或者蚁剑去打包，但是这个时候往往就会出现很多问题，列如打包失败，或者是打包得不完整等等。</p>
+<p>这个时候如果对方是windows服务器的话，我们可以将我们本地装的<code>winrar.exe</code>上传过去</p>
+<p><img src="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210142212.png" class="lazyload" data-srcset="https://raw.githubusercontent.com/chutianbk/chutianbk.github.io/master/2019/12/10/01/20191210142212.png" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="This is a picture without description" ></p>
+<p>压缩盘下的dat文件夹，并且命名为bat.rar<br><code>winrar.exe a -ag -k -r -s -ibck c:/bak.rar c:/dat/</code></p>
+<p>压缩多个文件<br><code>winrar a -ag -ibck bak.rar filename1 filename2 filename....</code></p>
+<p>参数说明：<br><code>a</code> :备份所有文件；<br><code>-ag</code> :当创建压缩文件时，以格式“YYYYMMDDHHMMSS”附加当前日期字符串,文件名bakYYYYMMDDHHMMSS.rar；<br><code>-k</code> :锁定压缩文件；<br><code>-r</code>:备份目录和子目录；<br><code>-s</code> :创建固实压缩文件；<br><code>-ibck </code>:后台运行；</p>
+<p><code>filename1</code>：要压缩的文件名，可以多个，也可用通配符<code>file*</code></p>
+
+</div>
+  </div>
+  
+  
+    
+    <div class='footer'>
       
-        <div>
-          <a class='readmore' href='/2019/12/10/01/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
+      
+      
       
     </div>
   
+  
+    
 
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2019-12-10T10:38:16+00:00">
+  <a class='notlink' href="/" onclick="return false;" title="Click me!" >
+    <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2019年12月10日</p>
+  </a>
 </div>
 
-          </div>
         
       
+        
+          
+
+        
+      
+        
+          
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
     
-  </section>
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
   
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2019/12/16/02/'>
+          <p class='title'><i class="fas fa-chevron-left" aria-hidden="true"></i>使用L2TP拨号上网</p>
+          <p class='content'>什么是L2TP​    L2TP是一种工业标准的Internet隧道协议，功能大致和PPTP协议类似，比如同样可以对网络数据流进行加密。不过也有不同之处，比如PPTP要求网络为IP网络，L2TP...</p>
+        </a>
+      
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
+  
+
+  
+  <article class="post white-box reveal shadow" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2019/12/10/01/index.html#comments">
+    </span>
+    <p ct><i class='fas fa-comments'></i> 评论</p>
     
+    
+    <div id="layoutHelper-comments"></div>
+
+  </article>
   
+
+
+
 
 
 </div>
@@ -2560,86 +2453,34 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
 
-<section class="widget blogger shadow desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/'>
-          <img no-lazy src='https://s2.loli.net/2021/12/21/bKuDOS8C2ZoEipB.png' alt="This is a picture without description" />
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>楚天</h2>
-        
-        
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-        
-          
-        
-          
-        
-          
-        
-      </div>
-    
-  </div>
-</section>
 
-  
 
-  
-    
-    
-  
-
-  <section class="widget category shadow desktop pjax">
+  <section class="widget toc-wrapper shadow desktop mobile pjax" id="toc-div" >
     
   <header>
     
-      <a href='/blog/categories/'><i class="fas fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
+      <i class="fas fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
     
   </header>
 
 
     <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/%E6%B8%97%E9%80%8F/" href="/categories/%E6%B8%97%E9%80%8F/"
-            active-action="action-categoriesE6B897E9808F"
-            ><div class='name'>渗透</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/%E8%84%9A%E6%9C%AC/" href="/categories/%E8%84%9A%E6%9C%AC/"
-            active-action="action-categoriesE8849AE69CAC"
-            ><div class='name'>脚本</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">一、信息收集</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E5%90%8E%E5%8F%B0%E7%88%86%E7%A0%B4"><span class="toc-text">二、后台爆破</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%AF%BB%E6%89%BE%E4%B8%8A%E4%BC%A0%E7%82%B9"><span class="toc-text">三、寻找上传点</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81%E5%B3%B0%E5%9B%9E%E8%B7%AF%E8%BD%AC"><span class="toc-text">四、峰回路转</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81%E8%9A%81%E5%89%91%E6%97%A0%E6%96%87%E4%BB%B6shell%E8%BF%9E%E6%8E%A5%E4%B9%8B"><span class="toc-text">五、蚁剑无文件shell连接之</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E4%B8%8A%E4%BC%A0mimikatz%E6%8A%93%E5%8F%96Hash"><span class="toc-text">六、上传mimikatz抓取Hash</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E6%80%BB%E7%BB%93"><span class="toc-text">七、总结</span></a></li></ol>
     </div>
   </section>
-
-
-  
-
-  
-    
-    
-
-  
 
   
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2675,8 +2516,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
-  pdata.postTitle="";
+  pdata.ispage=true;
+  pdata.postTitle="看我如何拿下BC站的服务器";
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2685,15 +2526,15 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="full";
-      cover_wrapper.style.display="";
-      scroll_down.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
+      scroll_down.style.display="none";
     
   
 </script>
@@ -2790,8 +2631,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640161081824')
-      volantis.js('/js/thirdparty/message.js?time=1640161081824', () => {
+      volantis.css('/css/message.css?time=1640161081813')
+      volantis.js('/js/thirdparty/message.js?time=1640161081813', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -2836,8 +2677,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640161081824')
-      volantis.js('/js/thirdparty/message.js?time=1640161081824', () => {
+      volantis.css('/css/message.css?time=1640161081813')
+      volantis.js('/js/thirdparty/message.js?time=1640161081813', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -2896,8 +2737,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640161081824')
-      volantis.js('/js/thirdparty/message.js?time=1640161081824', () => {
+      volantis.css('/css/message.css?time=1640161081813')
+      volantis.js('/js/thirdparty/message.js?time=1640161081813', () => {
         hideMessage(done);
       });
     } else {
@@ -3060,7 +2901,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/plugins/rightMenu.js?time=1640161081824')
+    volantis.js('/js/plugins/rightMenu.js?time=1640161081813')
   </script>
 
 
@@ -3074,19 +2915,19 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1640161081824")
+        volantis.js("/js/plugins/sites.js?time=1640161081813")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1640161081824")
+        volantis.js("/js/plugins/friends.js?time=1640161081813")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1640161081824")
+        volantis.js("/js/plugins/contributors.js?time=1640161081813")
       }
     
   };
@@ -3199,7 +3040,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1640161081824').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1640161081813').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3208,7 +3049,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
 
 
-<script src="/js/app.js?time=1640161081824.js"></script>
+<script src="/js/app.js?time=1640161081813.js"></script>
 
 
 <!-- optional -->
@@ -3221,7 +3062,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1640161081824");
+    return volantis.js("/js/search/hexo.js?time=1640161081813");
   }
 
   function loadSearchService() {
@@ -3329,7 +3170,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1640161081824').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1640161081813').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{

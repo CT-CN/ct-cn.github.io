@@ -591,7 +591,7 @@ article#tag .all-tags ul li span:before {
   background: var(--color-codeblock);
   font-size: 0.8125rem;
   font-family: Menlo, UbuntuMono, Monaco, monospace, courier, sans-serif;
-  border: 1px solid #ffebcb;
+  border: 1px solid #d6ffeb;
   padding: 16px;
   border-radius: 4px;
   -webkit-border-radius: 4px;
@@ -6499,10 +6499,10 @@ pre {
   -moz-transition: all 0.28s ease;
   -o-transition: all 0.28s ease;
   -ms-transition: all 0.28s ease;
-  background: #ffeed2;
+  background: #dcffed;
 }
 .highlight:hover .gutter {
-  background: #ffedd0;
+  background: #dcffed;
 }
 .highlight figcaption {
   font-size: 13px;
