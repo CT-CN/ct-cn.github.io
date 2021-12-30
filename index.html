@@ -20,7 +20,7 @@
   <meta content="ChuTian" name="apple-mobile-web-app-title">
   <meta content="black-translucent" name="apple-mobile-web-app-status-bar-style">
   <meta content="telephone=no" name="format-detection">
-  <link rel="preload" href="/css/style.css?time=1640849269301" as="style">
+  <link rel="preload" href="/css/style.css?time=1640849499055" as="style">
   <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/VarelaRound/VarelaRound-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 <link rel="preload" href="https://cdn.jsdelivr.net/gh/volantis-x/cdn-fonts/UbuntuMono/UbuntuMono-Regular.ttf" as="font" type="font/ttf" crossorigin="anonymous">
 
@@ -1622,8 +1622,8 @@ ul.list-v >li>a:hover {
 }
 
   </style>
-  <link rel="stylesheet" href="/css/style.css?time=1640849269301" media="print" onload="this.media='all';this.onload=null">
-  <noscript><link rel="stylesheet" href="/css/style.css?time=1640849269301"></noscript>
+  <link rel="stylesheet" href="/css/style.css?time=1640849499055" media="print" onload="this.media='all';this.onload=null">
+  <noscript><link rel="stylesheet" href="/css/style.css?time=1640849499055"></noscript>
   
 <script>
 if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMode))
@@ -3046,8 +3046,8 @@ sudo /etc/init.d/ssh restart
   <script>
   volantis.message = (title, message, option = {}, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640849269300')
-      volantis.js('/js/thirdparty/message.js?time=1640849269301', () => {
+      volantis.css('/css/message.css?time=1640849499055')
+      volantis.js('/js/thirdparty/message.js?time=1640849499055', () => {
         tozashMessage(title, message, option, done);
       });
     } else {
@@ -3092,8 +3092,8 @@ sudo /etc/init.d/ssh restart
 
   volantis.question = (title, message, option = {}, success = null, cancel = null, done = null) => {
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640849269300')
-      volantis.js('/js/thirdparty/message.js?time=1640849269301', () => {
+      volantis.css('/css/message.css?time=1640849499055')
+      volantis.js('/js/thirdparty/message.js?time=1640849499055', () => {
         tozashQuestion(title, message, option, success, cancel, done);
       });
     } else {
@@ -3152,8 +3152,8 @@ sudo /etc/init.d/ssh restart
     }
     
     if (typeof iziToast === "undefined") {
-      volantis.css('/css/message.css?time=1640849269300')
-      volantis.js('/js/thirdparty/message.js?time=1640849269301', () => {
+      volantis.css('/css/message.css?time=1640849499055')
+      volantis.js('/js/thirdparty/message.js?time=1640849499055', () => {
         hideMessage(done);
       });
     } else {
@@ -3316,7 +3316,7 @@ sudo /etc/init.d/ssh restart
     
       volantis.APlayerController = {};
     
-    volantis.js('/js/plugins/rightMenu.js?time=1640849269300')
+    volantis.js('/js/plugins/rightMenu.js?time=1640849499055')
   </script>
 
 
@@ -3330,19 +3330,19 @@ sudo /etc/init.d/ssh restart
     
       const sites_api = document.getElementById('sites-api');
       if (sites_api != undefined && typeof SitesJS === 'undefined') {
-        volantis.js("/js/plugins/sites.js?time=1640849269300")
+        volantis.js("/js/plugins/sites.js?time=1640849499055")
       }
     
     
       const friends_api = document.getElementById('friends-api');
       if (friends_api != undefined && typeof FriendsJS === 'undefined') {
-        volantis.js("/js/plugins/friends.js?time=1640849269300")
+        volantis.js("/js/plugins/friends.js?time=1640849499055")
       }
     
     
       const contributors_api = document.getElementById('contributors-api');
       if (contributors_api != undefined && typeof ContributorsJS === 'undefined') {
-        volantis.js("/js/plugins/contributors.js?time=1640849269301")
+        volantis.js("/js/plugins/contributors.js?time=1640849499055")
       }
     
   };
@@ -3435,7 +3435,7 @@ sudo /etc/init.d/ssh restart
       path = defaultPath || decodeURI(window.location.pathname);
     }
     var valine = new Valine();
-    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"BrNaAxT1IuKdjQzJ4iQ59v3E-MdYXbMMI","appKey":"d9xKPJw6iYP9JU1i1cICfPx0","serverURLs":"https://brnaaxt1.api.lncldglobal.com","meta":["nick"],"requiredFields":["nick"],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
+    valine.init(Object.assign(Object.assign({"path":null,"placeholder":"快来评论吧~","appId":"BrNaAxT1IuKdjQzJ4iQ59v3E-MdYXbMMI","appKey":"d9xKPJw6iYP9JU1i1cICfPx0","serverURLs":"https://brnaaxt1.api.lncldglobal.com","meta":["nick"],"requiredFields":[],"enableQQ":true,"recordIP":false,"avatar":"robohash","pageSize":10,"lang":"zh-cn","highlight":true,"mathJax":false}, {
       el: '#valine_container',
       path: path,
       placeholder: pagePlaceholder,
@@ -3455,7 +3455,7 @@ sudo /etc/init.d/ssh restart
       VolantisFancyBox.bind('#valine_container .vcontent img:not(.vemoji)');
     }
   }
-  volantis.js('/js/thirdparty/valine.js?time=1640849269301').then(pjax_valine)
+  volantis.js('/js/thirdparty/valine.js?time=1640849499055').then(pjax_valine)
   volantis.pjax.push(pjax_valine);
 </script>
 
@@ -3464,7 +3464,7 @@ sudo /etc/init.d/ssh restart
 
 
 
-<script src="/js/app.js?time=1640849269301.js"></script>
+<script src="/js/app.js?time=1640849499055.js"></script>
 
 
 <!-- optional -->
@@ -3477,7 +3477,7 @@ sudo /etc/init.d/ssh restart
 
   function loadSearchScript() {
     // see: layout/_partial/scripts/_ctrl/cdnCtrl.ejs
-    return volantis.js("/js/search/hexo.js?time=1640849269301");
+    return volantis.js("/js/search/hexo.js?time=1640849499055");
   }
 
   function loadSearchService() {
@@ -3594,7 +3594,7 @@ sudo /etc/init.d/ssh restart
   var runningOnBrowser = typeof window !== "undefined";
   var isBot = runningOnBrowser && !("onscroll" in window) || typeof navigator !== "undefined" && /(gle|ing|ro|msn)bot|crawl|spider|yand|duckgo/i.test(navigator.userAgent);
   if (!isBot) {
-    volantis.js('/js/plugins/parallax.js?time=1640849269300').then(()=>{
+    volantis.js('/js/plugins/parallax.js?time=1640849499055').then(()=>{
       parallax()
     })
     volantis.pjax.send(()=>{
